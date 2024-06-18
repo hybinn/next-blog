@@ -15,24 +15,28 @@ export default function PingpongPage() {
   const serveChange = 2 // 5
 
   const leftScore = () => {
-    if (ls + 1 >= finalScore) {
+    const newLs = ls + 1
+    if (newLs >= finalScore) {
       setLss(lss + 1)
       setLs(0)
       setRs(0)
+      setLstyle(serveStyle)
+      setRstyle(noServeStyle)
     } else {
-      const newLs = ls + 1
       setLs(newLs)
       checkServe(newLs, rs)
     }
   }
 
   const rightScore = () => {
-    if (rs + 1 >= finalScore) {
+    const newRs = rs + 1
+    if (newRs >= finalScore) {
       setRss(rss + 1)
       setLs(0)
       setRs(0)
+      setLstyle(serveStyle)
+      setRstyle(noServeStyle)
     } else {
-      const newRs = rs + 1
       setRs(newRs)
       checkServe(ls, newRs)
     }
