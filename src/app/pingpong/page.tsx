@@ -42,7 +42,7 @@ export default function PingpongPage() {
     }
   }
 
-  const checkServe = (newLs, newRs) => {
+  const checkServe = (newLs: number, newRs: number) => {
     let total = newLs + newRs
     if (total % (serveChange * 2) < serveChange) {
       setLstyle(serveStyle)
